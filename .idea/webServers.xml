@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ssh://root@163.180.117.221:7877/root/flask-project/bin/python3" name="ssh://root@163.180.117.221:7877/root/flask-project/bin/python3">
+        <fileTransfer host="163.180.117.221" port="7877" accessType="SFTP">
+          <option name="port" value="7877" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
