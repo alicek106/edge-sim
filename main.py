@@ -6,14 +6,12 @@ import ast
 import datetime, time
 from config import config
 import os
-from dao.StatusDao import StatusDAO
 
 ## Global variables
 current_milli_time = lambda: int(round(time.time() * 1000))
 app = Flask(__name__)
 client = MongoClient(config['mongo_url'], 27017)
 db = client['metrics']
-__statusDao = StatusDAO()
 
 @app.route('/')
 def request_job():
@@ -25,7 +23,6 @@ def request_job():
         output = check_output('bash /STREAM/run.sh %s' % (priority), shell=True, stderr=STDOUT)
     output = output.decode('utf-8').replace('\n', '')
     store_result(priority, output)
-
     return json.dumps({'status': 'success'})
 
 def store_result(priority, result_name):
