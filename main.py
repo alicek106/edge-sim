@@ -17,25 +17,14 @@ __statusDao = StatusDAO()
 
 @app.route('/')
 def request_job():
-
-    start_time = current_milli_time()
-    __statusDao.updateStatus('running', start_time, -1, config['host'], config['workload_name'])
-
-    ####
     priority = request.args.get('priority')
     if priority == None:
         priority = -1
-        output = check_output('bash /STREAM/run.sh',
-                              shell=True, stderr=STDOUT)
+        output = check_output('bash /STREAM/run.sh', shell=True, stderr=STDOUT)
     else:
-        output = check_output('bash /STREAM/run.sh %s' % (priority),
-                          shell=True, stderr=STDOUT)
+        output = check_output('bash /STREAM/run.sh %s' % (priority), shell=True, stderr=STDOUT)
     output = output.decode('utf-8').replace('\n', '')
     store_result(priority, output)
-    ####
-
-    end_time= current_milli_time()
-    __statusDao.updateStatus('stopped', start_time, end_time, config['host'], config['workload_name'])
 
     return json.dumps({'status': 'success'})
 
