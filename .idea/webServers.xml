@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5be1ac96-f109-4f8f-b913-5fef4fa279f5" name="Flask Frontend" url="http://163.180.117.221">
+        <fileTransfer host="163.180.117.221" port="7878" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="7878" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
