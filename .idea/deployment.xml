@@ -5,7 +5,7 @@
       <paths name="Flask Frontend">
         <serverdata>
           <mappings>
-            <mapping deploy="/root/flask-frontend/src" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/root/flask/src" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
